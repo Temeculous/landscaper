@@ -1,4 +1,4 @@
-tools = {"teeth": {"name": "teeth", "cost": 0, "earnings": 1, "next": "rustyScissors"}, "rustyScissors": { "name": "rusty scissors", "cost": 5, "earnings": 5, "next": "oldMower"}, "oldMower": {"name": "old mower", "cost": 25, "earnings": 50, "next": "newMower"}, "newMower": {"name": "new mower", "cost":250, "earnings": 100, "next": "students"}, "students": {"name": "students", "cost": 500, "earnings": 250}}
+tools = {"teeth": {"name": "teeth", "cost": 0, "earnings": 1, "next": "rustyScissors"}, "rustyScissors": { "name": "rusty scissors", "cost": 5, "earnings": 5, "next": "oldMower"}, "oldMower": {"name": "old mower", "cost": 25, "earnings": 50, "next": "newMower"}, "newMower": {"name": "new mower", "cost":250, "earnings": 100, "next": "students"}, "students": {"name": "students", "cost": 500, "earnings": 250, "next": "none"}}
 
 
 def gameOn():
@@ -25,7 +25,7 @@ def gameOn():
                 print(currentTool, nextTool)
             else:
                 continue
-        if wallet >= 1000:
-            print(f"\n*************\nYou've earned ${wallet}, That's surely enough to retire :)\n*************\n GAME OVER \n*************\n")
+        if currentTool == tools["students"]:
+            print(f"\n*************\nYou've earned ${wallet} and have a fleet of students working for you.\n That's surely enough to retire :)\n*************\n GAME OVER \n*************\n")
             gameOver = True
 gameOn()
